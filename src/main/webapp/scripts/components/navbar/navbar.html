@@ -1,0 +1,151 @@
+<div class="site_wrapper" ng-controller="NavbarController">
+    <div class="clearfix">
+    </div>
+    <header id="header">
+        <!-- Top header bar -->
+        <div id="topHeader">
+            <div class="wrapper">
+                <div class="top_nav">
+                    <div class="container">
+                        <div class="right">
+                            <ul>
+                                <li ng-show="isAuthenticated()"><i class="fa fa-user"></i>Hello ok</li>
+                                <li class="link" ng-hide="isAuthenticated()" ng-class="{active: nav.isActive('/login')}"><a ui-sref="login"><i class="fa fa-lock"></i>Login</a></li>
+                                <li class="link" ng-hide="isAuthenticated()" ng-class="{active: nav.isActive('/signup')}"><a ui-sref="register"><i class="fa fa-edit"></i>Sign up</a></li>                              
+
+                                <li ng-show="isAuthenticated()"><a href="" ng-click="logout()">Logout</a></li>
+                                
+                                <li><a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i> admin@twilabs.com</a></li>
+                                <li><i class="fa fa-phone"></i> +91 9663966884</li>
+
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+
+                        </div>
+                        <!-- end right social links -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- end top navigation -->
+
+
+        <div id="trueHeader">
+
+            <div class="wrapper">
+
+                <div class="container">
+
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="index.html" id="logo"></a>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="menu_main">
+
+                        <div class="navbar yamm navbar-default">
+
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <div class="navbar-toggle .navbar-collapse .pull-right " data-toggle="collapse" data-target="#navbar-collapse-1"> <span>Menu</span>
+                                        <button type="button"> <i class="fa fa-bars"></i></button>
+                                    </div>
+                                </div>
+
+                                <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
+
+                                    <ul class="nav navbar-nav">
+                                        
+                                    
+
+                                        <li><a href="index.html" class="active"><i class="fa fa-home"></i>Home</a></li>
+                                        
+                                        <li ng-show="isAuthenticated()"> <a ng-href="/:id/dashboard" ng-class="item.class"><i class="fa fa-dashboard"></i> Dashboard</a>
+
+                                        </li>
+
+
+                                       <li ui-sref-active="active" ><a ui-sref="people" ng-class="item.class"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span >People</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="bucket" ng-class="item.class"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span >Bucket</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="blog" ng-class="item.class"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span >Blogs</span></a></li>
+
+                                <li ng-show="isAuthenticated()" ng-switch="isAuthenticated()" ng-class="{active: $state.includes('account')}" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="hidden-sm">
+                                Account
+                            </span>
+                            <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>
+                            &#xA0;<span>Settings</span></a></li>
+                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-lock"></span>
+                            &#xA0;<span>Password</span></a></li>
+                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>
+                            &#xA0;<span>Sessions</span></a></li>
+                        <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
+                            &#xA0;<span>Sign out</span></a></li>
+
+                    </ul>
+                </li>
+                 
+                <li ng-class="{active: $state.includes('admin')}" ng-switch="isAuthenticated()" has-authority="ROLE_ADMIN" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="" id="admin-menu">
+                            <span>
+                            <span class="glyphicon glyphicon-tower"></span>
+                            <span class="hidden-sm">Admin</span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active"><a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span>
+                            &#xA0;<span>User management</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="tracker" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-eye-open"></span>
+                                &nbsp;<span>User tracker</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="metrics" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-dashboard"></span>
+                            &#xA0;<span>Metrics</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="health" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-heart"></span>
+                            &#xA0;<span>Health</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-list-alt"></span>
+                            &#xA0;<span>Configuration</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="audits" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-bell"></span>
+                            &#xA0;<span>Audits</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="logs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-tasks"></span>
+                            &#xA0;<span>Logs</span></a></li>
+                        <li ng-hide="inProduction" ui-sref-active="active"><a ui-sref="docs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-book"></span>
+                            &#xA0;<span>API</span></a></li>
+                        <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+                    </ul>
+                </li>
+                </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end menu -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="clearfix"></div>

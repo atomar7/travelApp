@@ -1,0 +1,48 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "imageUrls",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "peopleCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "people",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "achievedCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "achieve",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "experiences",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "pagination": "infinite-scroll"
+}

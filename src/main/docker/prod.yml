@@ -1,0 +1,7 @@
+travelapp-mongodb:
+  container_name: travelapp-mongodb
+  image: mongo:3.0.7
+  # volumes:
+  #   - ~/volumes/jhipster/travelApp/mongodb/:/data/db/
+  ports:
+    - "27017:27017"

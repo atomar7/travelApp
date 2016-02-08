@@ -1,0 +1,79 @@
+<div>
+    <h2>Blogs</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="blog.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new Blog
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
+                    <th jh-sort-by="id"><span>All Blogs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                </tr>
+            </thead>
+            
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="blog in blogs track by blog.id">
+                    <!-- <td><a ui-sref="blog.detail({id:blog.id})">{{blog.id}}</a></td>
+                    <td>{{blog.title}}</td>
+                    <td>{{blog.blog}}</td>
+                    <td>{{blog.imageUrls}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="blog.detail({id:blog.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="blog.edit({id:blog.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="blog.delete({id:blog.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td> -->
+              <td>
+                <div class="clearfix margin_top2"></div>
+                <div class="blog_post">	
+        <div class="blog_postcontent">
+        <div class="image_frame"><a href="#"><img src="http://placehold.it/1170x520" alt="" /></a></div>
+        <h3><a ui-sref="blog.detail({id:blog.id})">{{blog.title}}</a></h3>
+            <ul class="post_meta_links">
+            	<li><a href="#" class="date">22 July 2014</a></li>
+                <li class="post_by"><i>by:</i> <a href="#">Adam Harrison</a></li>
+                <li class="post_categoty"><i>in:</i> <a href="#">Web tutorials</a></li>
+                <li class="post_comments"><i>note:</i> <a href="#">18 Comments</a></li>
+            </ul>
+         <div class="clearfix"></div>
+         <div class="margin_top1"></div>
+        <p>{{blog.blog}}<a ui-sref="blog.detail({id:blog.id})">read more...</a></p>
+        </div>
+    </div><!-- /# end post -->
+    
+    <div class="clearfix divider_dashed9"></div>
+                </td>
+            </tr>      
+                
+                
+            </tbody>
+            </div>
+    </div>
+

@@ -1,0 +1,73 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "followersCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "followingCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "bucketCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "bucketAchievedCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "followers",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "following",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "buckets",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "bucketAchieved",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "rating",
+            "fieldType": "Float"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "userId",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "blogsCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "blogs",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "pagination": "infinite-scroll"
+}

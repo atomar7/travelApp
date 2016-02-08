@@ -1,0 +1,33 @@
+<div>
+    <h2>Peoples</h2>
+    <jh-alert></jh-alert>
+    <br/>
+    
+  
+    
+    
+    
+            
+            <div class="col-md-4" ng-repeat="people in peoples track by people.id" infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+			<div class="framed-box">
+				<div class="framed-box-wrap">
+					<div class="pricing-title">
+					<h4 class="nocaps">Sample Title One</h4>
+					</div>
+					<div class="pricing-text-list">
+                        <ul class="list1">
+                        <li><i class="fa fa-star-o"></i> {{people.id}}</li>
+                        <li><i class="fa fa-star-o"></i> Lorem Ipsum you need to be sure</li>
+                        <li><i class="fa fa-star-o"></i> Internet tend to repeat predefined</li>
+                        <li><i class="fa fa-star-o"></i> Latin words combined with</li>
+                        <li><i class="fa fa-star-o"></i> This book is treatise on the theory</li>
+                        </ul>
+						<br />
+					<p><a href="#" class="but_download"><i class="fa fa-download"></i> Download</a></p>
+					</div>
+				</div>
+				
+			</div>
+		<div class="clearfix divider_dashed8"></div>
+</div>
+</div>

@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myBucketLabel">Create or edit a Bucket</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="bucket.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="bucket.title"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="bucket.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_imageUrls">ImageUrls</label>
+            <input type="text" class="form-control" name="imageUrls" id="field_imageUrls"
+                    ng-model="bucket.imageUrls"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_peopleCount">PeopleCount</label>
+            <input type="number" class="form-control" name="peopleCount" id="field_peopleCount"
+                    ng-model="bucket.peopleCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_people">People</label>
+            <input type="text" class="form-control" name="people" id="field_people"
+                    ng-model="bucket.people"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_achievedCount">AchievedCount</label>
+            <input type="number" class="form-control" name="achievedCount" id="field_achievedCount"
+                    ng-model="bucket.achievedCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_achieve">Achieve</label>
+            <input type="text" class="form-control" name="achieve" id="field_achieve"
+                    ng-model="bucket.achieve"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_experiences">Experiences</label>
+            <input type="text" class="form-control" name="experiences" id="field_experiences"
+                    ng-model="bucket.experiences"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

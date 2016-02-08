@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "travelApp",
+    "packageName": "com.travel.app",
+    "packageFolder": "com/travel/app",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "hazelcast",
+    "websocket": "spring-websocket",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "97e2969f3b0f9f94d0834835238ad09867e6b966",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ]
+  }
+}

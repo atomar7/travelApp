@@ -1,0 +1,104 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPeopleLabel">Create or edit a People</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="people.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_followersCount">FollowersCount</label>
+            <input type="number" class="form-control" name="followersCount" id="field_followersCount"
+                    ng-model="people.followersCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_followingCount">FollowingCount</label>
+            <input type="number" class="form-control" name="followingCount" id="field_followingCount"
+                    ng-model="people.followingCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bucketCount">BucketCount</label>
+            <input type="number" class="form-control" name="bucketCount" id="field_bucketCount"
+                    ng-model="people.bucketCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bucketAchievedCount">BucketAchievedCount</label>
+            <input type="number" class="form-control" name="bucketAchievedCount" id="field_bucketAchievedCount"
+                    ng-model="people.bucketAchievedCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_followers">Followers</label>
+            <input type="text" class="form-control" name="followers" id="field_followers"
+                    ng-model="people.followers"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_following">Following</label>
+            <input type="text" class="form-control" name="following" id="field_following"
+                    ng-model="people.following"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_buckets">Buckets</label>
+            <input type="text" class="form-control" name="buckets" id="field_buckets"
+                    ng-model="people.buckets"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_bucketAchieved">BucketAchieved</label>
+            <input type="text" class="form-control" name="bucketAchieved" id="field_bucketAchieved"
+                    ng-model="people.bucketAchieved"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_rating">Rating</label>
+            <input type="number" class="form-control" name="rating" id="field_rating"
+                    ng-model="people.rating"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_userId">UserId</label>
+            <input type="text" class="form-control" name="userId" id="field_userId"
+                    ng-model="people.userId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_blogsCount">BlogsCount</label>
+            <input type="number" class="form-control" name="blogsCount" id="field_blogsCount"
+                    ng-model="people.blogsCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_blogs">Blogs</label>
+            <input type="text" class="form-control" name="blogs" id="field_blogs"
+                    ng-model="people.blogs"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_imageUrl">ImageUrl</label>
+            <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                    ng-model="people.imageUrl"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
