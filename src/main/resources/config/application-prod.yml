@@ -20,10 +20,8 @@ spring:
             enabled: false
     data:
         mongodb:
-            uri: mongodb://localhost:27017
+            uri: mongodb://admin:admin@ds059215.mongolab.com:59215/heroku_mk2rm3sl
             database: travelapp
-            Root User:     admin
-            Root Password: 2feFwsm5axl6
     mail:
         host: localhost
         port: 25
