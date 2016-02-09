@@ -21,7 +21,9 @@ spring:
     data:
         mongodb:
             uri: mongodb://localhost:27017
-            database: travelApp
+            database: travelapp
+            Root User:     admin
+            Root Password: 2feFwsm5axl6
     mail:
         host: localhost
         port: 25
