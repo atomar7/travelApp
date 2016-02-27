@@ -131,7 +131,7 @@
 	margin-top:18px;
 	position: relative;
 	text-indent:-999em;
-	background:url(../images/logo.png) no-repeat left bottom;
+	background:url(../images/logo.png) no-repeat;
 }
 
 /* top navigation */
@@ -3545,6 +3545,10 @@ ul.list_empty {
 	background-color: #f9f9f9;
 }
 
+.centreloc{
+	text-align: center;
+}
+
 /* pricing tables */
 .pricing-tables-main {
 	position: relative;
@@ -3943,10 +3947,19 @@ ul.post_meta_links {
 	float: left;
 	width: 100%;
 }
+.blog_postcontent .image_frame2 {
+	float: left;
+	width: 50%;
+	margin-bottom: 27px;
+}
 .blog_postcontent .image_frame {
 	float: left;
 	width: 100%;
 	margin-bottom: 27px;
+}
+.headline{
+	color: #1a0000;
+	font-style: normal;;
 }
 
 

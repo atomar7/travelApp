@@ -39,5 +39,5 @@ angular.module('travelappApp').controller('BlogDialogController',
         $scope.addUrl = function() {
         	$scope.blog.imageUrls.push($scope.temp);
         	$scope.temp = '';
-        }
+        };
 }]);

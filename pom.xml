@@ -250,11 +250,16 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
-        <dependency>
+       <dependency>
             <groupId>org.mongeez</groupId>
             <artifactId>mongeez</artifactId>
             <version>0.9.6</version>
         </dependency>
+        <!-- <dependency>
+              <groupId>com.github.mongobee</groupId>
+              <artifactId>mongobee</artifactId>
+              <version>0.10</version>
+          </dependency> -->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-jdk8</artifactId>

@@ -25,42 +25,65 @@
                     ng-model="bucket.description"
                      />
         </div>
+        
+        
         <div class="form-group">
-            <label class="control-label" for="field_imageUrls">ImageUrls</label>
-            <input type="text" class="form-control" name="imageUrls" id="field_imageUrls"
-                    ng-model="bucket.imageUrls"
-                     />
-        </div>
+						<label class="control-label" for="field_imageUrls">ImageUrls</label>
+						<input type="text" class="form-control" name="imageUrls"
+							id="field_imageUrls" ng-model="tempImageUrls">
+						<button type="button" class="btn btn-default" ng-click="addUrl()">Add
+							url</button>
+						</input>
+					</div>
+        
+        
+        
+        
         <div class="form-group">
             <label class="control-label" for="field_peopleCount">PeopleCount</label>
             <input type="number" class="form-control" name="peopleCount" id="field_peopleCount"
                     ng-model="bucket.peopleCount"
                      />
         </div>
+        
         <div class="form-group">
-            <label class="control-label" for="field_people">People</label>
-            <input type="text" class="form-control" name="people" id="field_people"
-                    ng-model="bucket.people"
-                     />
-        </div>
+						<label class="control-label" for="field_people">People</label>
+						<input type="text" class="form-control" name="people"
+							id="field_people" ng-model="tempPeople">
+						<button type="button" class="btn btn-default" ng-click="addPeople()">Add
+							People</button>
+						</input>
+					</div>
+        
         <div class="form-group">
             <label class="control-label" for="field_achievedCount">AchievedCount</label>
             <input type="number" class="form-control" name="achievedCount" id="field_achievedCount"
                     ng-model="bucket.achievedCount"
                      />
         </div>
+        
+        
+        
         <div class="form-group">
-            <label class="control-label" for="field_achieve">Achieve</label>
-            <input type="text" class="form-control" name="achieve" id="field_achieve"
-                    ng-model="bucket.achieve"
-                     />
-        </div>
+						<label class="control-label" for="field_achieve">Achieve</label>
+						<input type="text" class="form-control" name="achieve"
+							id="field_achieve" ng-model="tempAchieve">
+						<button type="button" class="btn btn-default" ng-click="addAchieve()">Add
+							Achieve</button>
+						</input>
+					</div>
+        
+        
+        
         <div class="form-group">
-            <label class="control-label" for="field_experiences">Experiences</label>
-            <input type="text" class="form-control" name="experiences" id="field_experiences"
-                    ng-model="bucket.experiences"
-                     />
-        </div>
+						<label class="control-label" for="field_experiences">Experiences</label>
+						<input type="text" class="form-control" name="experiences"
+							id="field_experiences" ng-model="tempExperiences">
+						<button type="button" class="btn btn-default" ng-click="addAchieve()">Add
+							Experiences</button>
+						</input>
+					</div>
+        
 
     </div>
     <div class="modal-footer">

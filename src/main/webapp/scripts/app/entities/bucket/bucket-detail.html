@@ -1,84 +1,179 @@
-
 <div>
-    <h2><span>Bucket</span> {{bucket.id}}</h2>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Field</th>
-                <th>Value</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <span>Title</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.title}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Description</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.description}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>ImageUrls</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.imageUrls}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>PeopleCount</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.peopleCount}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>People</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.people}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>AchievedCount</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.achievedCount}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Achieve</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.achieve}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Experiences</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{bucket.experiences}}</span>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <h2>
+		<a ui-sref="bucket.detail({id:bucket.id})"><span class ="headline">I want to</span> {{bucket.title}}</a>
+	</h2>
+    <div class="container-fluid" ng-hide="userHasBucket(bucket)">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="bucket.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Add it to my bucket list
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid" ng-show="userHasBucket(bucket)">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="bucket.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Mark this as achieved
+                    </span>
+                </button>
+            </div>
+        </div>
     </div>
 
-    <button type="submit"
+	<div class="container">
+		<div class="content_left">
+			<div class="blog_post">
+				<div class="blog_postcontent">
+					<div class="image_frame">
+						<a href="#"><img src="http://placehold.it/1170x520" alt="" /></a>
+					</div>
+					<div class="sharepost">
+				<ul>
+					<li><a href="#">&nbsp;<i class="fa fa-facebook fa-lg"></i>&nbsp;
+					</a></li>
+					<li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-flickr fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-skype fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-youtube fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest fa-lg"></i></a></li>
+				</ul>
+			</div>
+					<div class="clearfix"></div>
+								<div class="margin_top1"></div>
+								<ul class="post_meta_links">
+									<li class="post_categoty"><a ng-href='#/bucket/{{bucket.id}}#achievedLocal'>{{bucket.achievedCount}}<i> achievers</i></a></li>
+									<li class="post_by"><a ng-href="#/bucket/{{bucket.id}}#peopleLocal">{{bucket.peopleCount}} <i> people</i></a></li>
+									<li class="post_comments"><a ng-href="#/bucket/{{bucket.id}})#experiencesLocal">{{bucket.experiencesCount}}<i> experiences</i></a></li>
+								</ul>
+					<div class="clearfix"></div>
+					<div class="margin_top1"></div>
+					<p>{{bucket.description }}</p>
+				</div>
+			</div>
+			<div class="clearfix divider_dashed9"></div>
+			<div class="clearfix"></div>
+	<div class="cotainer">		
+			<h4 id="achievedLocal">Achievers</h4>
+			<div class="col-md-4" ng-repeat="person in achieve">
+			<div class="framed-box">
+				<div class="framed-box-wrap" ng-show="getCurrentPerson(person)">
+					<div class="pricing-title">
+					<h4 class="nocaps">{{currentUser.name}}</h4>
+					<li><a ng-href="#/people/{{currentUser.id}})"><img src="{{currentUser.imageUrl}}" alt="" height="120px" width="80px"/></a></li>
+					</div>
+					<div class="pricing-text-list">
+                        <ul class="list1">
+                        <li><i class="fa fa-star-o"></i> {{currentUser.followingCount}} Following</li>
+                        <li><i class="fa fa-star-o"></i> {{currentUser.followCount}} Followers</li>
+                        <li><i class="fa fa-star-o"></i> {{currentUser.bucketsCount}} Buckets</li>
+                        <li><i class="fa fa-star-o"></i> {{currentUser.achievedCount}} Achieved</li>
+                        
+                        </ul>
+					</div>
+				</div>
+			</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="container">
+<div class="clearfix divider_dashed9"></div>
+<a name="peopleLocal"><h4>Tripsters</h4></a>
+			<div class="col-md-4" ng-repeat="person in people">
+			<div class="framed-box">
+				<div class="framed-box-wrap" ng-show="getCurrentPerson(person)">
+					<div class="pricing-title">
+					<h4 class="nocaps">{{currentUser.name}}</h4>
+					<li><a ng-href="#/people/{{currentUser.id}})"><img src="{{currentUser.imageUrl}}" alt="" height="160px" width="120px"/></a></li>
+					</div>
+					<div class="pricing-text-list">
+                        <ul class="list1">
+                        <li><i class="fa fa-star-o"></i> {{currentUser.followingCount}} Following</li>
+                        <li><i class="fa fa-star-o"></i> {{currentUser.followCount}} Followers</li>
+                        <li><i class="fa fa-star-o"></i> {{currentUser.bucketsCount}} Buckets</li>
+                        <li><i class="fa fa-star-o"></i> {{currentUser.achievedCount}} Achieved</li>
+                        </ul>
+					</div>
+				</div>
+			</div>
+		<!-- <div class="clearfix divider_dashed8"></div> -->
+</div>
+</div>
+			
+		<div class="container">
+		<div class="clearfix divider_dashed9"></div>
+			<h4 id="experiencesLocal">Experiences</h4>
+			<div class="col-md-3" ng-repeat="exp in experiences">
+			<div class="framed-box">
+				<div class="framed-box-wrap" ng-show="getCurrentPerson(exp.id)">
+					<div class="pricing-title">
+					<h4 class="nocaps">{{currentUser.name}}</h4>
+					<li><a ng-href="#/people/{{currentUser.id}})"><img src="{{currentUser.imageUrl}}" alt="" height="160px" width="120px"/></a></li>
+					</div>
+					<div class="pricing-text-list">
+                        exp.description
+					</div>
+				</div>
+			</div>
+		<div class="clearfix divider_dashed8"></div>
+</div>
+</div>
+<div class="container">
+			<div class="clearfix divider_dashed9"></div>
+			<div class="comment_form" ng-show="userHasBucket(bucket)">
+				<h4 >Post your experience</h4>
+				<form action="blog-post.html" method="post">
+					<textarea name="comment" class="comment_textarea_bg" rows="20" ng-model="postExp"
+						cols="7"></textarea>
+					<div class="clearfix"></div>
+					<input name="send" type="submit" value="Submit Experience" ng-submit="saveExperience()"
+						class="comment_submit" />
+					<p></p>
+				</form>
+			</div>
+			</div>
+			<div class="clearfix mar_top2"></div>
+		</div>
+		<div class="right_sidebar">
+			<div class="sidebar_widget">
+				<div class="sidebar_title">
+					<h4>
+						Popular <i>Buckets</i>
+					</h4>
+				</div>
+				<ul class="arrows_list1">
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							Near Banaglore</a></li>
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							Near Delhi</a></li>
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							Rajasthan</a></li>
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							Goa</a></li>
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							Kerala</a></li>
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							Laddakh</a></li>
+					<li><a href="#"><i class="fa fa-caret-right"></i>
+							North East</a></li>
+					</ul>
+			</div>
+			<div class="clearfix margin_top4"></div>
+			<div class="sidebar_widget"></div>
+		</div>
+		<div class="clearfix margin_top5"></div>
+	</div>
+	    <button type="submit"
             onclick="window.history.back()"
             class="btn btn-info">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>

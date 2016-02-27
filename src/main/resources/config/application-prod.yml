@@ -20,7 +20,7 @@ spring:
             enabled: false
     data:
         mongodb:
-            uri: mongodb://admin:admin@ds059215.mongolab.com:59215/heroku_mk2rm3sl
+            uri: mongodb://admin:admin@ds017688.mlab.com:17688/heroku_lr92m0bh
             database: travelapp
     mail:
         host: localhost

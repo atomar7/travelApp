@@ -1,7 +1,10 @@
 package com.travel.app.config;
 
-import com.travel.app.domain.util.JSR310DateConverters.*;
-import com.mongodb.Mongo;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.mongeez.Mongeez;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,19 +12,24 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.core.convert.CustomConversions;
 import org.springframework.data.mongodb.core.mapping.event.ValidatingMongoEventListener;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.mongodb.Mongo;
+import com.travel.app.domain.util.JSR310DateConverters.DateToLocalDateConverter;
+import com.travel.app.domain.util.JSR310DateConverters.DateToLocalDateTimeConverter;
+import com.travel.app.domain.util.JSR310DateConverters.DateToZonedDateTimeConverter;
+import com.travel.app.domain.util.JSR310DateConverters.LocalDateTimeToDateConverter;
+import com.travel.app.domain.util.JSR310DateConverters.LocalDateToDateConverter;
+import com.travel.app.domain.util.JSR310DateConverters.ZonedDateTimeToDateConverter;
 
 
 @Configuration
@@ -82,4 +90,16 @@ public class DatabaseConfiguration extends AbstractMongoConfiguration {
         mongeez.process();
         return mongeez;
     }
+    
+    
+//    @Bean
+//    public Mongobee mongobee(){
+//
+//       Mongobee runner = 
+//           new Mongobee("mongodb://username:password@ds011111.mongolab.com:11111/tablename");  
+//       runner.setChangeLogsScanPackage(
+//           "com.application.config.DatabaseConfiguration"); // package to scan for changesets
+//       runner.setEnabled(true);
+//       return runner;
+//    }
 }

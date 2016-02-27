@@ -70,25 +70,27 @@
 
                                         <li><a href="index.html" class="active"><i class="fa fa-home"></i>Home</a></li>
                                         
-                                        <li ng-show="isAuthenticated()"> <a ng-href="/:id/dashboard" ng-class="item.class"><i class="fa fa-dashboard"></i> Dashboard</a>
+                                        <li ng-show="isAuthenticated()"> <a ng-href="/:id/dashboard" ng-class="item.class"><span class="fa fa-dashboard"></span> Dashboard</a>
 
                                         </li>
 
 
-                                       <li ui-sref-active="active" ><a ui-sref="people" ng-class="item.class"><span class="glyphicon glyphicon-asterisk"></span>
+                                       <li ui-sref-active="active" ><a ui-sref="people" ng-class="item.class"><span class="fa fa-group"></span>
                         &#xA0;<span >People</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="bucket" ng-class="item.class"><span class="glyphicon glyphicon-asterisk"></span>
+                        <li ui-sref-active="active" ><a ui-sref="bucket" ng-class="item.class"><span class="fa fa-star-o"></span>
                         &#xA0;<span >Bucket</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="blog" ng-class="item.class"><span class="glyphicon glyphicon-asterisk"></span>
+                        <li ui-sref-active="active" ><a ui-sref="blog" ng-class="item.class"><span class="fa fa-book"></span>
                         &#xA0;<span >Blogs</span></a></li>
 
                                 <li ng-show="isAuthenticated()" ng-switch="isAuthenticated()" ng-class="{active: $state.includes('account')}" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">
-                            <span class="glyphicon glyphicon-user"></span>
+                            <!-- <span class="glyphicon glyphicon-user"> -->
                             <span class="hidden-sm">
-                                Account
+                                Account<b class="caret"></b>
                             </span>
-                            <b class="caret"></b>
+                            <!-- </span> -->
+                            
+                            
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>
@@ -105,11 +107,10 @@
                  
                 <li ng-class="{active: $state.includes('admin')}" ng-switch="isAuthenticated()" has-authority="ROLE_ADMIN" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="" id="admin-menu">
-                            <span>
-                            <span class="glyphicon glyphicon-tower"></span>
-                            <span class="hidden-sm">Admin</span>
-                            <b class="caret"></b>
-                        </span>
+                            
+                            <!-- <span class="glyphicon glyphicon-tower"></span> -->
+                            <span class="hidden-sm">Admin<b class="caret"></b></span>
+                       
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active"><a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span>

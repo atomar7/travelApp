@@ -1,5 +1,5 @@
 <div>
-    <h2>Buckets</h2>
+    <div class="centreloc"><h2>Buckets</h2></div>
     <jh-alert></jh-alert>
     <div class="container-fluid">
         <div class="row">
@@ -16,55 +16,55 @@
     <br/>
     <div class="table-responsive">
         <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="title"><span>Title</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="imageUrls"><span>ImageUrls</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="peopleCount"><span>PeopleCount</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="people"><span>People</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="achievedCount"><span>AchievedCount</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="achieve"><span>Achieve</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="experiences"><span>Experiences</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
+            
             <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
                 <tr ng-repeat="bucket in buckets track by bucket.id">
-                    <td><a ui-sref="bucket.detail({id:bucket.id})">{{bucket.id}}</a></td>
-                    <td>{{bucket.title}}</td>
-                    <td>{{bucket.description}}</td>
-                    <td>{{bucket.imageUrls}}</td>
-                    <td>{{bucket.peopleCount}}</td>
-                    <td>{{bucket.people}}</td>
-                    <td>{{bucket.achievedCount}}</td>
-                    <td>{{bucket.achieve}}</td>
-                    <td>{{bucket.experiences}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="bucket.detail({id:bucket.id})"
-                                    class="btn btn-info btn-sm"> 
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="bucket.edit({id:bucket.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="bucket.delete({id:bucket.id})"
-                                    class="btn btn-danger btn-sm">                                    
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
-                            </button>
-                        </div>
-                    </td>
+                    <td>
+						<div class="clearfix margin_top2"></div>
+						<div class="blog_post">
+							<div class="blog_postcontent">
+								<h3>
+									<a ui-sref="bucket.detail({id:bucket.id})"><span class ="headline">I want to</span> {{bucket.title}}</a>
+								</h3>
+								<div class="image_frame2">
+									<a href="#"><img src="http://placehold.it/650x420" alt="" /></a>
+								</div>
+								<div class="image_frame">
+								<p>
+									{{bucket.description | limitTo: 20 }}{{myString.length > 100 ? ' read more...' : ''}}<a ui-sref="bucket.detail({id:bucket.id})"></a>
+								</p>
+								</div>
+								<div class="clearfix"></div>
+								<div class="margin_top1"></div>
+								<ul class="post_meta_links">
+									<li class="post_by"><a href="bucket.detail({id:blog.id})">{{bucket.peopleCount}} <i> people</i></a></li>
+									<li class="post_categoty"><a href="bucket.detail({id:blog.id})">{{bucket.achievedCount}}<i> achievers</i></a></li>
+									<li class="post_comments"><a href="bucket.detail({id:blog.id})">{{bucket.experiencesCount}}<i> experiences</i></a></li>
+								</ul>
+								<div class="clearfix"></div>
+								<div class="margin_top1"></div>
+							</div>
+						</div>
+						<!-- /# end post -->
+
+						<div class="clearfix divider_dashed9"></div>
+					</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
+
+<!--        		<td>{{bucket.title}}</td> string
+                    <td>{{bucket.description}}</td> string
+                    <td>{{bucket.imageUrls}}</td> array
+                    <td>{{bucket.peopleCount}}</td> integer
+                    <td>{{bucket.people}}</td> array
+                    <td>{{bucket.achievedCount}}</td> integer
+                    <td>{{bucket.achieve}}</td> array
+                    <td>{{bucket.experiences}}</td> array
+             
+
+ -->
+

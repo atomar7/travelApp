@@ -44,14 +44,27 @@ angular.module('travelappApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                views: {
-                    'content@': {
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
                         templateUrl: 'scripts/app/entities/blog/blog-dialog.html',
-                        controller: 'BlogDetailController'
-                    }
-                },
-                resolve: {
-                }
+                        controller: 'BlogDialogController',
+                        size: 'lg',
+                        resolve: {
+                            entity: function () {
+                                return {
+                                    title: null,
+                                    blog: null,
+                                    imageUrls: null,
+                                    id: null
+                                };
+                            }
+                        }
+                    }).result.then(function(result) {
+                        $state.go('blog', null, { reload: true });
+                    }, function() {
+                        $state.go('blog');
+                    })
+                }]
             })
             .state('blog.edit', {
                 parent: 'blog',
